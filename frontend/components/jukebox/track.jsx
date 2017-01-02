@@ -10,6 +10,12 @@ const Track = ({ track, disabled, onPlay, onDelete }) => (
         onClick={onPlay}>
         Play
       </button>
+      <button
+       className='delete-button'
+       disabled={disabled}
+       onClick={onDelete}>
+       Delete
+     </button>
     </div>
   </div>
 );

@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
-import { deleteTrack } from '../../actions/tracks_actions';
 import { groupUpdate } from '../../actions/notes_actions';
 import { startPlaying, stopPlaying } from '../../actions/playing_actions';
 import Jukebox from './jukebox';
+import { deleteTrack } from '../../actions/tracks_actions';
 
 const mapStateToProps = ({ tracks, isRecording, isPlaying }) => ({
   tracks,
@@ -20,14 +20,14 @@ const mapDispatchToProps = dispatch => ({
     let timeElapsed;
 
     let interval = setInterval(() => {
-      if (currNote < roll.length) { // keep playing
+      if (currNote < roll.length) {
         timeElapsed = Date.now() - playBackStartTime;
 
         if (timeElapsed >= roll[currNote].timeSlice) {
           dispatch(groupUpdate(roll[currNote].notes));
           currNote++;
         }
-      } else { // done playing
+      } else { 
         clearInterval(interval);
         dispatch(stopPlaying());
       }

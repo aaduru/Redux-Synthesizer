@@ -102,3 +102,13 @@ body {
 .play-button:hover {
   box-shadow: 0 2px 2px grey;
 }
+
+.delete-button {
+  background: lightgrey;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.delete-button:hover {
+  box-shadow: 0 2px 2px grey;
+}
