@@ -9,10 +9,10 @@ class Synth extends React.Component {
      super(props);
      this.notes = NOTE_NAMES.map(note => new Note(TONES[note]));
   }
-  // componentDidMount() {
-  //   $(document).on('keydown', e => this.onKeyDown(e));
-  //   $(document).on('keyup', e => this.onKeyUp(e));
-  // }
+  componentDidMount() {
+    $(document).on('keydown', e => this.onKeyDown(e));
+    $(document).on('keyup', e => this.onKeyUp(e));
+  }
 
   onKeyUp(e) {
     this.props.keyReleased(e.key);
